@@ -36,8 +36,8 @@ jobs:
         run: pip install -r requirements.txt  # Flask + pytest
 
       - name: Run tests
-        run: pytest test_app.py -v  # -v = verbose, näitab iga testi tulemust
-   build:
+        run: pytest -v  # -v = verbose, näitab iga testi tulemust
+  build:
     needs: test                    # Jookseb ainult kui testid läbivad
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'  # Ainult main branch (mitte PR'id)
